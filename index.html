@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Münevver &amp; A. Furkan</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://furkandr01.github.io/">
+<meta property="og:image" content="https://furkandr01.github.io/onizleme.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:title" content="Münevver &amp; A. Furkan — Düğün Davetiyesi">
+<meta property="og:description" content="Bu mutlu günümüzde sizleri de aramızda görmekten mutluluk duyarız.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF6EC;
+    --bg-soft: #F3E9D2;
+    --card-bg: #FEFCF7;
+    --text: #3A2C22;
+    --text-soft: #7A6A57;
+    --accent: #7C2D3B;
+    --accent-soft: #A9576A;
+    --gold: #AD8B54;
+    --leaf: #8B9574;
+    --border: rgba(58,44,34,0.14);
+    --shadow: rgba(58,44,34,0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #241A15;
+      --bg-soft: #2C2019;
+      --card-bg: #2C2019;
+      --text: #F1E6D2;
+      --text-soft: #C9B79C;
+      --accent: #E2AFB0;
+      --accent-soft: #D4949A;
+      --gold: #CBA76B;
+      --leaf: #A8B896;
+      --border: rgba(241,230,210,0.14);
+      --shadow: rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #241A15;
+    --bg-soft: #2C2019;
+    --card-bg: #2C2019;
+    --text: #F1E6D2;
+    --text-soft: #C9B79C;
+    --accent: #E2AFB0;
+    --accent-soft: #D4949A;
+    --gold: #CBA76B;
+    --leaf: #A8B896;
+    --border: rgba(241,230,210,0.14);
+    --shadow: rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 64px 24px 48px;
+  }
+
+  .invitation-art {
+    opacity: 0;
+    animation: rise 1s ease-out 0.1s forwards;
+  }
+  .invitation-art video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 34px -20px var(--shadow);
+  }
+
+  .flourish {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 28px;
+    opacity: 0;
+    animation: rise 1s ease-out 0.1s forwards;
+  }
+  .flourish svg { width: 120px; height: 20px; }
+  .flourish path, .flourish circle { stroke: var(--gold); fill: none; stroke-width: 1; }
+  .flourish circle { fill: var(--gold); stroke: none; }
+
+  .names {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 8vw, 3.4rem);
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    animation: rise 1s ease-out 0.25s forwards;
+  }
+  .names em {
+    display: block;
+    font-style: normal;
+    color: var(--accent);
+    font-size: 0.55em;
+    letter-spacing: 0.12em;
+    margin-top: 6px;
+  }
+
+  .tagline {
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 1.05rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    margin: 18px 0 0;
+    opacity: 0;
+    animation: rise 1s ease-out 0.4s forwards;
+  }
+
+  .events {
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    opacity: 0;
+    animation: rise 1s ease-out 0.55s forwards;
+  }
+
+  .event-card {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 34px 30px;
+    text-align: center;
+    box-shadow: 0 12px 30px -18px var(--shadow);
+  }
+
+  .corner { position: absolute; width: 34px; height: 34px; opacity: 0.85; }
+  .corner svg { width: 100%; height: 100%; display: block; }
+  .corner path { stroke: var(--leaf); fill: none; stroke-width: 1; stroke-linecap: round; }
+  .corner.tl { top: 6px; left: 6px; }
+  .corner.tr { top: 6px; right: 6px; transform: scaleX(-1); }
+  .corner.bl { bottom: 6px; left: 6px; transform: scaleY(-1); }
+  .corner.br { bottom: 6px; right: 6px; transform: scale(-1,-1); }
+
+  .event-kind {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin: 0 0 4px;
+  }
+
+  .event-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .event-day {
+    color: var(--text-soft);
+    font-size: 0.85rem;
+    margin: 4px 0 0;
+  }
+
+  .event-time {
+    color: var(--text-soft);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    margin: 10px 0 20px;
+  }
+
+  .event-venue {
+    font-size: 1rem;
+    margin: 0 0 2px;
+  }
+  .event-place {
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    margin: 0 0 20px;
+  }
+
+  .map-btn {
+    display: inline-block;
+    padding: 11px 26px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .map-btn:hover { background: var(--accent); color: var(--bg-soft); }
+
+  .divider {
+    display: flex;
+    justify-content: center;
+    margin: 56px 0 40px;
+  }
+  .divider svg { width: 200px; height: 22px; }
+  .divider path { stroke: var(--leaf); fill: none; stroke-width: 1; stroke-linecap: round; }
+
+  .memory {
+    text-align: center;
+  }
+  .memory h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin: 0 0 12px;
+  }
+  .memory p {
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 380px;
+    margin: 0 auto 26px;
+  }
+  .memory-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    border-radius: 2px;
+    transition: opacity 0.25s ease;
+  }
+  .memory-btn:hover { opacity: 0.85; }
+
+  footer {
+    margin-top: 64px;
+    text-align: center;
+  }
+  .footer-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  .footer-note {
+    color: var(--text-soft);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    max-width: 340px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flourish, .names, .tagline, .events { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="invitation-art">
+      <video controls autoplay muted loop playsinline preload="auto" poster="onizleme.jpg">
+        <source src="video.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <div class="events">
+
+      <div class="event-card">
+        <span class="corner tl"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M4,4 C9,9 12,15 11,22 C10,27 8,30 5,32" /><path d="M6,8 C9,6 12,7 13,10 C11,11 8,11 6,8 Z" /><path d="M6,8 L10,9" /><path d="M8,14 C11,12 14,13 15,16 C13,17 10,17 8,14 Z" /><path d="M8,14 L12,15" /><path d="M9,20 C12,18 15,19 16,22 C14,23 11,23 9,20 Z" /><path d="M9,20 L13,21" /></svg></span>
+        <span class="corner tr"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M4,4 C9,9 12,15 11,22 C10,27 8,30 5,32" /><path d="M6,8 C9,6 12,7 13,10 C11,11 8,11 6,8 Z" /><path d="M6,8 L10,9" /><path d="M8,14 C11,12 14,13 15,16 C13,17 10,17 8,14 Z" /><path d="M8,14 L12,15" /><path d="M9,20 C12,18 15,19 16,22 C14,23 11,23 9,20 Z" /><path d="M9,20 L13,21" /></svg></span>
+        <span class="corner bl"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M4,4 C9,9 12,15 11,22 C10,27 8,30 5,32" /><path d="M6,8 C9,6 12,7 13,10 C11,11 8,11 6,8 Z" /><path d="M6,8 L10,9" /><path d="M8,14 C11,12 14,13 15,16 C13,17 10,17 8,14 Z" /><path d="M8,14 L12,15" /><path d="M9,20 C12,18 15,19 16,22 C14,23 11,23 9,20 Z" /><path d="M9,20 L13,21" /></svg></span>
+        <span class="corner br"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M4,4 C9,9 12,15 11,22 C10,27 8,30 5,32" /><path d="M6,8 C9,6 12,7 13,10 C11,11 8,11 6,8 Z" /><path d="M6,8 L10,9" /><path d="M8,14 C11,12 14,13 15,16 C13,17 10,17 8,14 Z" /><path d="M8,14 L12,15" /><path d="M9,20 C12,18 15,19 16,22 C14,23 11,23 9,20 Z" /><path d="M9,20 L13,21" /></svg></span>
+        <p class="event-kind">Kına Gecesi</p>
+        <p class="event-date">11 Kasım 2026</p>
+        <p class="event-day">Çarşamba</p>
+        <p class="event-time">19.00 – 23.00</p>
+        <p class="event-venue">Elit Düğün Salonu</p>
+        <p class="event-place">Konya</p>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Elit+D%C3%BC%C4%9F%C3%BCn+Salonu+Konya" target="_blank" rel="noopener">Haritada Aç</a>
+      </div>
+
+      <div class="event-card">
+        <span class="corner tl"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M4,4 C9,9 12,15 11,22 C10,27 8,30 5,32" /><path d="M6,8 C9,6 12,7 13,10 C11,11 8,11 6,8 Z" /><path d="M6,8 L10,9" /><path d="M8,14 C11,12 14,13 15,16 C13,17 10,17 8,14 Z" /><path d="M8,14 L12,15" /><path d="M9,20 C12,18 15,19 16,22 C14,23 11,23 9,20 Z" /><path d="M9,20 L13,21" /></svg></span>
+        <span class="corner tr"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M4,4 C9,9 12,15 11,22 C10,27 8,30 5,32" /><path d="M6,8 C9,6 12,7 13,10 C11,11 8,11 6,8 Z" /><path d="M6,8 L10,9" /><path d="M8,14 C11,12 14,13 15,16 C13,17 10,17 8,14 Z" /><path d="M8,14 L12,15" /><path d="M9,20 C12,18 15,19 16,22 C14,23 11,23 9,20 Z" /><path d="M9,20 L13,21" /></svg></span>
+        <span class="corner bl"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M4,4 C9,9 12,15 11,22 C10,27 8,30 5,32" /><path d="M6,8 C9,6 12,7 13,10 C11,11 8,11 6,8 Z" /><path d="M6,8 L10,9" /><path d="M8,14 C11,12 14,13 15,16 C13,17 10,17 8,14 Z" /><path d="M8,14 L12,15" /><path d="M9,20 C12,18 15,19 16,22 C14,23 11,23 9,20 Z" /><path d="M9,20 L13,21" /></svg></span>
+        <span class="corner br"><svg viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M4,4 C9,9 12,15 11,22 C10,27 8,30 5,32" /><path d="M6,8 C9,6 12,7 13,10 C11,11 8,11 6,8 Z" /><path d="M6,8 L10,9" /><path d="M8,14 C11,12 14,13 15,16 C13,17 10,17 8,14 Z" /><path d="M8,14 L12,15" /><path d="M9,20 C12,18 15,19 16,22 C14,23 11,23 9,20 Z" /><path d="M9,20 L13,21" /></svg></span>
+        <p class="event-kind">Nikah</p>
+        <p class="event-date">15 Kasım 2026</p>
+        <p class="event-day">Pazar</p>
+        <p class="event-time">14.30 – 15.30</p>
+        <p class="event-venue">Fahrünnisa Nikah Salonu</p>
+        <p class="event-place">Meram, Konya</p>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Fahr%C3%BCnnisa+Nikah+Salonu+Meram+Konya" target="_blank" rel="noopener">Haritada Aç</a>
+      </div>
+
+    </div>
+
+    <div class="divider">
+      <svg viewBox="0 0 200 22" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20,11 C24,3 32,3 36,11 C40,19 48,19 52,11 C56,3 64,3 68,11 C72,19 80,19 84,11 C88,3 92,3 96,11 C104,19 112,19 116,11 C120,3 128,3 132,11 C136,19 144,19 148,11 C152,3 160,3 164,11 C168,19 176,19 180,11" />
+        <path d="M20,11 C14,11 10,7 10,3 C10,0.5 12,-0.5 14,0.5 C16,1.5 14.5,4.5 11.5,4.5" />
+        <path d="M180,11 C186,11 190,15 190,19 C190,21.5 188,22.5 186,21.5 C184,20.5 185.5,17.5 188.5,17.5" />
+      </svg>
+    </div>
+
+    <div class="memory">
+      <h2>Bir Anı Bırakın</h2>
+      <p>Çektiğiniz fotoğraf ve videoları bizimle paylaşırsanız çok mutlu oluruz.</p>
+      <a class="memory-btn" href="https://forms.gle/ZjNxbXGJJ1ukiy7x5" target="_blank" rel="noopener">Anı Bırak</a>
+    </div>
+
+    <footer>
+      <p class="footer-names">Münevver &amp; A. Furkan</p>
+      <p class="footer-note">Bu mutlu günümüzde sizleri de aramızda görmekten mutluluk duyarız.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
